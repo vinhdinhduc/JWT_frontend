@@ -1,0 +1,108 @@
+.table-role {
+    width: 100%;
+    margin: 20px 0;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 16px;
+        line-height: 1.6;
+        border-radius: 12px;
+        overflow: hidden;
+
+        thead {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            th {
+                padding: 16px 12px;
+                text-align: left;
+                font-weight: 600;
+                color: white;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+                border: none;
+                position: relative;
+
+                &:not(:last-child)::after {
+                    content: "";
+                    position: absolute;
+                    right: 0;
+                    top: 20%;
+                    height: 60%;
+                    width: 1px;
+                    background: rgba(255, 255, 255, 0.2);
+                }
+            }
+        }
+        tbody {
+            tr {
+                transition: all 0.3s ease;
+                border-bottom: 1px solid #f1f3f4;
+
+                &:nth-child(even) {
+                    background-color: #f8f9fa;
+                }
+
+                &:hover {
+                    background: linear-gradient(90deg, #e3f2fd, #f3e5f5);
+                    transform: scale(1.01);
+                    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+                }
+                &:last-child {
+                    border-bottom: none;
+                }
+                td {
+                    padding: 16px 12px;
+                    color: #2c3e50;
+                    font-weight: 400;
+                    border: none;
+                    vertical-align: middle;
+                    button {
+                        border-radius: 4px;
+                        padding: 4px 8px;
+                        margin-right: 2px;
+                        outline: none;
+                        border: none;
+
+                        &:active {
+                            transform: translateY(1px);
+                        }
+                    }
+
+                    .btn-edit {
+                        background: linear-gradient(135deg, #c4cf2c, #8e961d);
+                        color: white;
+                        box-shadow: 0 4px 12px #c4cf2c;
+                        &:hover {
+                            background: linear-gradient(135deg, #d6e40f, #edf57d);
+                            box-shadow: 0 6px 16px #c4cf2c;
+                            transform: translateY(-2px);
+                        }
+                    }
+                    .btn-delete {
+                        background: linear-gradient(135deg, #e53935, #ef5350); /* đỏ đậm → đỏ nhạt */
+                        color: white;
+                        box-shadow: 0 4px 12px rgba(229, 57, 53, 0.3);
+
+                        &:hover {
+                            background: linear-gradient(135deg, #d32f2f, #e57373); /* đỏ đậm hơn */
+                            box-shadow: 0 6px 16px rgba(229, 57, 53, 0.4);
+                            transform: translateY(-2px);
+                        }
+                    }
+
+                    &:first-child {
+                        font-weight: 600;
+                        color: #ea6666;
+                    }
+                }
+            }
+        }
+    }
+    .body-footer {
+        margin-top: 8px;
+    }
+}

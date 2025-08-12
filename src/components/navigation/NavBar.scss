@@ -1,0 +1,67 @@
+@import "../../styles/variable.scss";
+
+.navbar-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 1rem 2rem;
+    border-radius: $border-radius;
+    box-shadow: $shadow-light;
+    background: linear-gradient(135deg, $primary-color 0%, $secondary-color 100%);
+    margin-top: 1rem;
+
+    .nav-right {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        .user-info {
+            color: $text-light;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+    }
+    .nav-link {
+        // margin: 0 20px;
+        // padding: 10px;
+
+        position: relative;
+        display: inline-block;
+        padding: 0.8rem 1.5rem;
+        color: $text-light;
+        font-weight: 600;
+        font-size: 1rem;
+        border-radius: $border-radius;
+        transition: $transition;
+        text-transform: uppercase;
+        overflow: hidden;
+
+        &:hover {
+            color: $text-light;
+            transform: translateY(-10%);
+            box-shadow: $shadow-hover;
+        }
+
+        &.active {
+            color: $text-light;
+            background: linear-gradient(135deg, $active-color, $accent-color);
+            transform: translateY(-1px);
+            box-shadow: 0 2px 8px rgba(49, 130, 206, 0.4);
+
+            &::after {
+                width: 100%;
+                background: $text-light;
+            }
+        }
+        &:focus {
+            outline: 2px solid $accent-color;
+            outline-offset: 2px;
+        }
+        @media (max-width: 480px) {
+            padding: 0.6rem 1rem;
+            font-size: 0.9rem;
+            width: 100%;
+            text-align: center;
+        }
+    }
+}
